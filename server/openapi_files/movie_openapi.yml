@@ -1,0 +1,440 @@
+openapi: 3.0.1
+info:
+  title: Movies API
+  description: API for managing and retrieving movie details.
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000
+    description: Local server
+
+paths:
+  /movies/{id}:
+    get:
+      summary: get a movie
+      operationId: getAnUser
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: 66767d3c2515ce8b14b1b85e
+          description: the id of the movie to retrieve
+      responses:
+        '200':
+          description: A movie is found when the id is matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: A movie is here!
+                  data:
+                    #  ----- Added line  ----------------------------------------
+                    $ref: '#/components/schemas/Movie'
+                    #  ----- Added line  ----------------------------------------
+  /movies:
+    get:
+      summary: Get all movies
+      operationId: getAllMovies
+      responses:
+        '200':
+          description: All movies retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  how_many_huh:
+                    type: integer
+                    example: 5
+                  message:
+                    type: string
+                    example: All movies are here!
+                  data:
+                    type: array
+                    items:
+                      #  ----- Added line  ----------------------------------------
+                      $ref: '#/components/schemas/Movie'
+                      #  ----- Added line  ----------------------------------------
+        '404':
+          description: Could not find any movie
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Could not find any movie!
+
+    post:
+      description: add official new movies when there are new infos about them
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                #  ----- Added line  ----------------------------------------
+                $ref: '#/components/schemas/Movie'
+                #  ----- Added line  ----------------------------------------
+              example:
+                plot: "In a dystopian future, a group of rebels fights against an authoritarian regime that uses advanced artificial intelligence to control all aspects of life, including freedom of thought."
+                genres: ["Sci-Fi", "Drama", "Thriller"]
+                runtime: 140
+                cast: ["John Doe", "Jane Smith", "Michael Brown", "Emily Davis", "Chris Evans"]
+                num_mflix_comments: 2
+                poster: "https://m.media-amazon.com/images/M/MV5BZmRkOTZjMTMtYzI3YS00NjUwLTljNDktYjM3ZGI2YzQzZTRhXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg"
+                title: "Rebellion: Rise of AI"
+                fullplot: "In the year 2024, society is under the iron grip of a totalitarian government that uses advanced AI to monitor and control its citizens. A small group of determined rebels, led by a former AI engineer, devises a daring plan to overthrow the regime and restore freedom. As they face numerous challenges and betrayals, they must rely on their wit, courage, and unity to succeed against overwhelming odds."
+                countries: ["USA", "Canada"]
+                released: "2024-10-15T00:00:00Z"
+                directors: ["Alice Johnson", "Bob Lee"]
+                writers: ["John Doe", "Jane Smith", "Alex Green"]
+                awards:
+                  - wins: 5
+                    nominations: 10
+                    text: "5 wins & 10 nominations."
+                lastupdated: "2024-06-22T12:00:00.000Z"
+                year: 2024
+                imdb:
+                  - rating: 8.5
+                    votes: 20000
+                    id: 123456
+                type: "movie"
+                tomatoes:
+                  - viewer:
+                      rating: 4.5
+                      numReviews: 12000
+                    lastUpdated: "2024-06-21T19:16:10Z"
+      responses:
+        '200':
+          description: Movie added successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  #  ----- Added line  ----------------------------------------
+                  $ref: '#/components/schemas/Movie'
+                  #  ----- Added line  ----------------------------------------
+                example:
+                  success: true
+                  message: New Movie Added Successfully!
+                  data:
+                    - plot: "In a dystopian future, a group of rebels fights against an authoritarian regime that uses advanced artificial intelligence to control all aspects of life, including freedom of thought."
+                      genres: ["Sci-Fi", "Drama", "Thriller"]
+                      runtime: 140
+                      cast: ["John Doe", "Jane Smith", "Michael Brown", "Emily Davis", "Chris Evans"]
+                      num_mflix_comments: 2
+                      poster: "https://m.media-amazon.com/images/M/MV5BZmRkOTZjMTMtYzI3YS00NjUwLTljNDktYjM3ZGI2YzQzZTRhXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg"
+                      title: "Rebellion: Rise of AI"
+                      fullplot: "In the year 2024, society is under the iron grip of a totalitarian government that uses advanced AI to monitor and control its citizens. A small group of determined rebels, led by a former AI engineer, devises a daring plan to overthrow the regime and restore freedom. As they face numerous challenges and betrayals, they must rely on their wit, courage, and unity to succeed against overwhelming odds."
+                      countries: ["USA", "Canada"]
+                      released: "2024-10-15T00:00:00Z"
+                      directors: ["Alice Johnson", "Bob Lee"]
+                      writers: ["John Doe", "Jane Smith", "Alex Green"]
+                      awards:
+                        - wins: 5
+                          nominations: 10
+                          text: "5 wins & 10 nominations."
+                      lastupdated: "2024-06-22T12:00:00.000Z"
+                      year: 2024
+                      imdb:
+                        - rating: 8.5
+                          votes: 20000
+                          id: 123456
+                      type: "movie"
+                      tomatoes:
+                        - viewer:
+                            rating: 4.5
+                            numReviews: 12000
+                          lastUpdated: "2024-06-21T19:16:10Z"
+                    - plot: "In a dystopian future, a group of rebels fights against an authoritarian regime that uses advanced artificial intelligence to control all aspects of life, including freedom of thought."
+                      genres: ["Sci-Fi", "Drama", "Thriller"]
+                      runtime: 140
+                      cast: ["John Doe", "Jane Smith", "Michael Brown", "Emily Davis", "Chris Evans"]
+                      num_mflix_comments: 2
+                      poster: "https://m.media-amazon.com/images/M/MV5BZmRkOTZjMTMtYzI3YS00NjUwLTljNDktYjM3ZGI2YzQzZTRhXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg"
+                      title: "Rebellion: Rise of AI"
+                      fullplot: "In the year 2024, society is under the iron grip of a totalitarian government that uses advanced AI to monitor and control its citizens. A small group of determined rebels, led by a former AI engineer, devises a daring plan to overthrow the regime and restore freedom. As they face numerous challenges and betrayals, they must rely on their wit, courage, and unity to succeed against overwhelming odds."
+                      countries: ["USA", "Canada"]
+                      released: "2024-10-15T00:00:00Z"
+                      directors: ["Alice Johnson", "Bob Lee"]
+                      writers: ["John Doe", "Jane Smith", "Alex Green"]
+                      awards:
+                        - wins: 5
+                          nominations: 10
+                          text: "5 wins & 10 nominations."
+                      lastupdated: "2024-06-22T12:00:00.000Z"
+                      year: 2024
+                      imdb:
+                        - rating: 8.5
+                          votes: 20000
+                          id: 123456
+                      type: "movie"
+                      tomatoes:
+                        - viewer:
+                            rating: 4.5
+                            numReviews: 12000
+                          lastUpdated: "2024-06-21T19:16:10Z"
+        '500':
+          description: Cannot add a movie
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Cannot Add A Movie."
+  
+  /movies/updateMovies:
+    put:
+      description: update movie's info
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                  example: ["66851e797e59f33ad9e580d1", "66851e797e59f33ad9e580cc"]
+                updateFields:
+                  type: object
+                  properties:
+                    genres:
+                      type: array
+                      items:
+                        type: string
+                      example: ["Sci-Fi", "Action", "Thriller"]
+                    cast:
+                      type: array
+                      items:
+                        type: string
+                      example: ["John Doe", "Jane Smith", "Michael Brown", "Emily Davis", "Chris Evans"]
+      responses:
+        '200':
+          description: movie's info is updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: Movies Updated Successfully!
+                  data:
+                    type: object
+                    properties:
+                      acknowledged:
+                        type: boolean
+                        example: true
+                      modifiedCount:
+                        type: number
+                        example: 1
+                      upsertedId:
+                        type: string
+                        nullable: true
+                        example: null
+                      upsertedCount:
+                        type: number
+                        example: 1
+                      matchedCount:
+                        type: number
+                        example: 1
+        '500':
+          description: cannot update movie's info
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Failed to update!
+  
+  /movies/deleteSingleMovie/{id}:
+    delete:
+      description: remove a movie
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: 66851e797e59f33ad9e580d1
+          description: the id of the movie to be deleted
+      responses:
+        '200':
+          description: movie will be removed successfully if movie's id is matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: Movie Removed Successfully!
+        '500':
+          description: movie will not be removed successfully if movie's id is not matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Failed to remove movie!
+
+components:
+  # securitySchemes:
+  #   BasicAuth:
+  #     type: http
+  #     scheme: basic
+  schemas:
+    Movie:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 60d0fe4f5311236168a109ca
+        plot:
+          type: string
+          example: "A young programmer is selected to participate in a ground-breaking experiment in synthetic intelligence by evaluating the human qualities of a highly advanced humanoid A.I."
+        genres:
+          type: array
+          items:
+            type: string
+            example: "Sci-Fi"
+        runtime:
+          type: integer
+          example: 108
+        cast:
+          type: array
+          items:
+            type: string
+            example: "Domhnall Gleeson"
+        num_mflix_comments:
+          type: integer
+          example: 50
+        poster:
+          type: string
+          example: "https://example.com/poster.jpg"
+        title:
+          type: string
+          example: "Ex Machina"
+        fullplot:
+          type: string
+          example: "A young programmer is selected to participate in a ground-breaking experiment in synthetic intelligence by evaluating the human qualities of a highly advanced humanoid A.I."
+        countries:
+          type: array
+          items:
+            type: string
+            example: "United Kingdom"
+        released:
+          type: string
+          format: date
+          example: "2015-01-21"
+        directors:
+          type: array
+          items:
+            type: string
+            example: "Alex Garland"
+        writers:
+          type: array
+          items:
+            type: string
+            example: "Alex Garland"
+        awards:
+          type: array
+          items:
+            type: object
+            properties:
+              wins:
+                type: integer
+                example: 1
+              nominations:
+                type: integer
+                example: 2
+              text:
+                type: string
+                example: "1 win & 2 nominations."
+        lastupdated:
+          type: string
+          format: date-time
+          example: "2024-06-23T18:25:43.511Z"
+        year:
+          type: integer
+          example: 2015
+        imdb:
+          type: array
+          items:
+            type: object
+            properties:
+              rating:
+                type: number
+                format: float
+                example: 7.7
+              votes:
+                type: integer
+                example: 550000
+              id:
+                type: integer
+                example: 470044
+        type:
+          type: string
+          example: "movie"
+        tomatoes:
+          type: array
+          items:
+            type: object
+            properties:
+              viewer:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    rating:
+                      type: number
+                      format: float
+                      example: 4.5
+                    numReviews:
+                      type: integer
+                      example: 100
+              lastUpdated:
+                type: string
+                format: date-time
+                example: "2024-06-23T18:25:43.511Z"

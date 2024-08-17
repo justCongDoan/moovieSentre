@@ -1,0 +1,171 @@
+openapi: 3.0.1
+info:
+  title: Movies API
+  description: API for managing and retrieving movie details.
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000
+    description: Local server
+
+paths:
+  /theaters/{id}:
+    get:
+      summary: get a theater
+      operationId: getTheater
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: 6677910f3f2eff9a9f1bf94d
+          description: the id of the theater to retrieve
+      responses:
+        '200':
+          description: A theater is found when the id is matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: A theater is here!
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 6677910f3f2eff9a9f1bf94d
+                      theaterId:
+                        type: string
+                        example: 1
+                      location:
+                        type: object
+                        properties:
+                          address:
+                            type: object
+                            properties:
+                              address:
+                                type: string
+                                example: 123 Main St
+                              city:
+                                type: string
+                                example: Los Angeles
+                              state:
+                                type: string
+                                example: CA
+                              zipcode:
+                                type: string
+                                example: "90001"
+                          geo:
+                            type: object
+                            properties:
+                              type:
+                                type: string
+                                example: Point
+                              coordinates:
+                                type: array
+                                items:
+                                  type: number
+                                  format: float
+                                  example: -118.24532
+        '404':
+          description: No theater is found when the id is not matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: No theater found!
+
+  /theaters:
+    get:
+      summary: get a list of theaters
+      operationId: getManyTheaters
+      responses:
+        '200':
+          description: A list of theaters is retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: All theaters are here!
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        #  ----- Added line  ----------------------------------------
+                        $ref: '#/components/schemas/Theater'
+                        #  ----- Added line  ----------------------------------------
+        
+        '404':
+          description: No theater is found in the list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Not a single theater found!
+
+components:
+  schemas:
+    Theater:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 6677910f3f2eff9a9f1bf94d
+        theaterId:
+          type: string
+          example: 1
+        location:
+          type: object
+          properties:
+            address:
+              type: object
+              properties:
+                address:
+                  type: string
+                  example: 123 Main St
+                city:
+                  type: string
+                  example: Los Angeles
+                state:
+                  type: string
+                  example: CA
+                zipcode:
+                  type: string
+                  example: "90001"
+            geo:
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: Point
+                coordinates:
+                  type: array
+                  items:
+                    type: number
+                    format: float
+                    example: [-118.24532, 34.05223]

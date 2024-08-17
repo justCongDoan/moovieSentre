@@ -1,0 +1,32 @@
+[
+    {
+      "subjectName": "Toan Cao Cap 1",
+      "theoryCredits": 3,
+      "practicalCredits": 0
+    },
+    {
+      "subjectName": "Toan Cao Cap 2",
+      "theoryCredits": 3,
+      "practicalCredits": 0
+    },
+    {
+      "subjectName": "Lap Trinh Web",
+      "theoryCredits": 2,
+      "practicalCredits": 2
+    },
+    {
+      "subjectName": "Tri Tue Nhan Tao",
+      "theoryCredits": 3,
+      "practicalCredits": 1
+    },
+    {
+      "subjectName": "Hoc May",
+      "theoryCredits": 3,
+      "practicalCredits": 1
+    },
+    {
+      "subjectName": "Thiet Ke Phan Mem",
+      "theoryCredits": 3,
+      "practicalCredits": 1
+    }
+  ]

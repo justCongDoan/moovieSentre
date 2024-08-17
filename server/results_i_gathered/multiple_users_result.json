@@ -1,0 +1,42 @@
+{
+    "success": true,
+    "message": "Batch login process completed!",
+    "data": [
+        {
+            "email": "email1@gmail.com",
+            "success": true,
+            "message": "User Logged In successfully!",
+            "data": {
+                "_id": "6677f0b40f4e5615c2529963",
+                "name": "User's Name",
+                "email": "email1@gmail.com",
+                "password": "$2a$10$UTLDpNkBlRu08XDb5wd/bun740GqllxgV0huR.5xX.0e8zIgKl/0e",
+                "__v": 0
+            }
+        },
+        {
+            "email": "user1@example.com",
+            "success": true,
+            "message": "User Logged In successfully!",
+            "data": {
+                "_id": "6679210732e006a59f582880",
+                "name": "User1",
+                "email": "user1@example.com",
+                "password": "$2a$10$r.fimP7EFGRoHGqpJr8JT.jGDqyVuMcOybvroKaqGGW0uf8.xxyUC",
+                "__v": 0
+            }
+        },
+        {
+            "email": "user2@example.com",
+            "success": true,
+            "message": "User Logged In successfully!",
+            "data": {
+                "_id": "6679210732e006a59f582882",
+                "name": "User2",
+                "email": "user2@example.com",
+                "password": "$2a$10$paQ3qM.rECoJL7AN0cuKOOhVa.8bnsvdkV2wmMwPLP7hbqN5XRSry",
+                "__v": 0
+            }
+        }
+    ]
+}

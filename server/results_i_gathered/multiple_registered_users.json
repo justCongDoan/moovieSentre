@@ -1,0 +1,48 @@
+{
+    "success": true,
+    "message": "Users Created / Registered successfully!",
+    "data": [
+        {
+            "name": "User1",
+            "email": "user1@example.com",
+            "password": "$2a$10$r.fimP7EFGRoHGqpJr8JT.jGDqyVuMcOybvroKaqGGW0uf8.xxyUC",
+            "_id": "6679210732e006a59f582880",
+            "__v": 0
+        },
+        {
+            "name": "User2",
+            "email": "user2@example.com",
+            "password": "$2a$10$paQ3qM.rECoJL7AN0cuKOOhVa.8bnsvdkV2wmMwPLP7hbqN5XRSry",
+            "_id": "6679210732e006a59f582882",
+            "__v": 0
+        },
+        {
+            "name": "User3",
+            "email": "user3@example.com",
+            "password": "$2a$10$QSruriGgDjNtU452SnYWVeS6RBfvTM8qicw96Y/Io9uZWyoX1n6vC",
+            "_id": "667d2ddd16b478a72347327e",
+            "__v": 0
+        },
+        {
+            "name": "User4",
+            "email": "user4@example.com",
+            "password": "$2a$10$aCU.O3RcoBsfOn1X/Myle.JN5k4DkD.fxvk/oFsegrO0uhMLSnl3G",
+            "_id": "667d2ddd16b478a723473280",
+            "__v": 0
+        },
+        {
+            "name": "User5",
+            "email": "user5@example.com",
+            "password": "$2a$10$KxMVAg6pBKFJXqwQtxW/ZuN33aVZMHfb6RmxgUN5J.IJuZApU/H06",
+            "_id": "667d354516b478a723473282",
+            "__v": 0
+          },
+          {
+            "name": "User6",
+            "email": "user6@example.com",
+            "password": "$2a$10$WT0KqIAtW58MJEHhN8SFE.yVGgiShn4/WQULdw689Yo5CBQuY.KEW",
+            "_id": "667d354516b478a723473284",
+            "__v": 0
+          }
+    ]
+}

@@ -1,0 +1,373 @@
+openapi: 3.0.1
+info:
+  title: User API
+  description: API for managing and retrieving user details.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:4000
+    description: Local server
+
+paths:
+  /users/{id}:
+    get:
+      summary: Get an user
+      operationId: getAnUser
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: 6677f0b40f4e5615c2529963
+          description: The ID of the user to retrieve
+      responses:
+        '200':
+          description: An user is found when the id is matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: User found!
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 60d0fe4f5311236168a109ca
+                      name:
+                        type: string
+                        example: User1
+                      email:
+                        type: string
+                        example: user1@gmail.com
+                      password:
+                        type: string
+                        example: $2a$10$KOshck4hs6iuhnkdsjh/aksdhxkjnksdyuiwehnvksdmncx,zx/p5
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: User not found!
+
+  /users:
+    get:
+      description: Get all users
+      responses:
+        '200':
+          description: Users retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  how_many_huh:
+                    type: integer
+                    example: 5
+                  message:
+                    type: string
+                    example: All users are here!
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                          example: 60d0fe4f5311236168a109ca
+                        name:
+                          type: string
+                          example: John Doe
+                        email:
+                          type: string
+                          format: email
+                          example: johndoe@example.com
+                        password:
+                          type: string
+                          example: $2a$10$Ehv2oW5c9aO3ojB6Tjt4ze
+                    example:
+                    - _id: 60d0fe4f5311236168a109ca
+                      name: John Doe
+                      email: johndoe@example.com
+                      password: $2a$10$Ehv2oW5c9aO3ojB6Tjt4ze
+                    - _id: 60d0fe4f5311236168a109ca
+                      name: John Doe
+                      email: johndoe@example.com
+                      password: $2a$10$Ehv2oW5c9aO3ojB6Tjt4ze
+                    - _id: 60d0fe4f5311236168a109ca
+                      name: John Doe
+                      email: johndoe@example.com
+                      password: $2a$10$Ehv2oW5c9aO3ojB6Tjt4ze
+                    - _id: 60d0fe4f5311236168a109ca
+                      name: John Doe
+                      email: johndoe@example.com
+                      password: $2a$10$Ehv2oW5c9aO3ojB6Tjt4ze
+                    - _id: 60d0fe4f5311236168a109ca
+                      name: John Doe
+                      email: johndoe@example.com
+                      password: $2a$10$Ehv2oW5c9aO3ojB6Tjt4ze
+        '404':
+          description: No users found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: No users found!
+  
+  /users/login:
+    post:
+      description: lets an user login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  example: email1@gmail.com
+                password:
+                  type: string
+                  example: password
+      responses:
+        '200':
+          description: An user logs in successfully if they entered correct email & password
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: User Logged In successfully!
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 60d0fe4f5311236168a109ca
+                      name:
+                        type: string
+                        example: User's Name
+                      email:
+                        type: string
+                        example: email1@gmail.com
+                      password:
+                        type: string
+                        example: $2a$10$KOshck4hs6iuhnkdsjh/aksdhxkjnksdyuiwehnvksdmncx,zx/p5
+        '401':
+          description: An unsuccessful login if they entered incorrect email and/or password
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Login failed!
+
+  /users/loginMany:
+    post:
+      description: let users login simultaneously
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                users:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+                        example: email1@gmail.com
+                      password:
+                        type: string
+                        example: password
+                  example:
+                  - email: user5@example.com
+                    password: password5
+                  - email: user6@example.com
+                    password: password6
+      responses:
+        '200':
+          description: User log in successfully if they entered correct email & password
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: Batch login process completed!
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        email:
+                          type: string
+                          example: email1@gmail.com
+                        success:
+                          type: boolean
+                          example: true
+                        message:
+                          type: string
+                          example: User Logged In successfully!
+                        data:
+                          type: object
+                          properties:
+                            _id:
+                              type: string
+                              example: 60d0fe4f5311236168a109ca
+                            name:
+                              type: string
+                              example: User's Name
+                            email:
+                              type: string
+                              example: email1@gmail.com
+                            password:
+                              type: string
+                              example: $2a$10$KOshck4hs6iuhnkdsjh/aksdhxkjnksdyuiwehnvksdmncx,zx/p5
+        '500':
+          description: User log in unsuccessfully if they entered incorrect email and/or password
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Batch login process failed!
+  
+  /users/registerMany:
+    post:
+      description: let users register new accounts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - email
+                - password
+              properties:
+                users:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: User5
+                      email:
+                        type: string
+                        example: user5@example.com
+                      password:
+                        type: string
+                        example: password5
+                  example:
+                  - name: User5
+                    email: user5@example.com
+                    password: password5
+                  - name: User6
+                    email: user6@example.com
+                    password: password6
+      responses:
+        '200':
+          description: users registered successfully if they entered correct info's format
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                    example: true
+                  message:
+                    type: string
+                    example: Users Created / Registered successfully!
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                          example: 667d2ddd16b478a72347327e
+                        name:
+                          type: string
+                          example: User5
+                        email:
+                          type: string
+                          example: user5@example.com
+                        password:
+                          type: string
+                          example: $2a$10$QSruriGgDjNtU452SnYWVeS6RBfvTM8qicw96Y/Io9uZWyoX1n6vC
+                    example:
+                    - name: User5
+                      email: user5@example.com
+                      password: $2a$10$QSruriGgDjNtU452SnYWVeS6RBfvTM8qicw96Y/Io9uZWyoX1n6vC
+                    - name: User6
+                      email: user6@example.com
+                      password: $2a$10$QSruriGgDjNtU452SnYWVeS6RBfvTM8qicw96Y/Io9uZWyoX1n6vC
+        '500':
+          description: users registered unsuccessfully if they entered incorrect info's format
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: string
+                    example: false
+                  message:
+                    type: string
+                    example: Failed to create/register users! Try again!

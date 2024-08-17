@@ -1,0 +1,86 @@
+{
+    "success": true,
+    "message": "New Theater Added Successfully!",
+    "data": [
+        {
+            "theaterId": 2,
+            "location": {
+                "address": {
+                    "street1": "456 Elm St",
+                    "city": "New York",
+                    "state": "NY",
+                    "zipcode": "10001"
+                },
+                "geo": {
+                    "type": "Point",
+                    "coordinates": [
+                        -73.99667,
+                        40.73061
+                    ]
+                }
+            },
+            "_id": "667791203f2eff9a9f1bf950",
+            "__v": 0
+        },
+        {
+            "theaterId": 3,
+            "location": {
+                "address": {
+                    "street1": "789 Oak St",
+                    "city": "Chicago",
+                    "state": "IL",
+                    "zipcode": "60601"
+                },
+                "geo": {
+                    "type": "Point",
+                    "coordinates": [
+                        -87.6298,
+                        41.8781
+                    ]
+                }
+            },
+            "_id": "667791203f2eff9a9f1bf951",
+            "__v": 0
+        },
+        {
+            "theaterId": 4,
+            "location": {
+                "address": {
+                    "street1": "321 Maple St",
+                    "city": "Houston",
+                    "state": "TX",
+                    "zipcode": "77002"
+                },
+                "geo": {
+                    "type": "Point",
+                    "coordinates": [
+                        -95.3698,
+                        29.7604
+                    ]
+                }
+            },
+            "_id": "667791203f2eff9a9f1bf952",
+            "__v": 0
+        },
+        {
+            "theaterId": 5,
+            "location": {
+                "address": {
+                    "street1": "654 Pine St",
+                    "city": "San Francisco",
+                    "state": "CA",
+                    "zipcode": "94101"
+                },
+                "geo": {
+                    "type": "Point",
+                    "coordinates": [
+                        -122.4194,
+                        37.7749
+                    ]
+                }
+            },
+            "_id": "667791203f2eff9a9f1bf953",
+            "__v": 0
+        }
+    ]
+}

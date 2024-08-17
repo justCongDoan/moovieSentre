@@ -1,0 +1,51 @@
+{
+    "success": true,
+    "message": "New Comments Added Successfully!",
+    "data": [
+        {
+            "name": "Alice Johnson",
+            "email": "alice.johnson@example.com",
+            "movie_id": "66767d3c2515ce8b14b1b85e",
+            "text": "An amazing movie with a gripping storyline and stunning visuals!",
+            "date": "2024-06-22T12:34:56.000Z",
+            "_id": "66779ff04e5f7156d7e3261b",
+            "__v": 0
+        },
+        {
+            "name": "Bob Smith",
+            "email": "bob.smith@example.com",
+            "movie_id": "6676a1efd41c990b9af7c664",
+            "text": "The characters were well developed, and the plot twists were unexpected.",
+            "date": "2024-06-21T15:45:30.000Z",
+            "_id": "66779ffa4e5f7156d7e3261d",
+            "__v": 0
+        },
+        {
+            "name": "Carol Davis",
+            "email": "carol.davis@example.com",
+            "movie_id": "6676a1efd41c990b9af7c669",
+            "text": "I enjoyed every minute of this movie. Highly recommended!",
+            "date": "2024-06-20T09:23:45.000Z",
+            "_id": "66779ffa4e5f7156d7e3261e",
+            "__v": 0
+        },
+        {
+            "name": "David Wilson",
+            "email": "david.wilson@example.com",
+            "movie_id": "6676a1efd41c990b9af7c66e",
+            "text": "Great performances by the cast, and the direction was top-notch.",
+            "date": "2024-06-19T18:37:22.000Z",
+            "_id": "66779ffa4e5f7156d7e3261f",
+            "__v": 0
+        },
+        {
+            "name": "Emma Brown",
+            "email": "emma.brown@example.com",
+            "movie_id": "6676a1efd41c990b9af7c66e",
+            "text": "The soundtrack was phenomenal, and the cinematography was beautiful.",
+            "date": "2024-06-18T14:12:09.000Z",
+            "_id": "66779ffa4e5f7156d7e32620",
+            "__v": 0
+        }
+    ]
+}

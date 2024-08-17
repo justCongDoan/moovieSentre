@@ -1,0 +1,323 @@
+{
+    "success": true,
+    "message": "New Movie Added Successfully!",
+    "data": [
+        {
+            "plot": "In a dystopian future, a group of rebels fights against an authoritarian regime that uses advanced artificial intelligence to control all aspects of life, including freedom of thought.",
+            "genres": [
+                "Sci-Fi",
+                "Drama",
+                "Thriller"
+            ],
+            "runtime": 140,
+            "cast": [
+                "John Doe",
+                "Jane Smith",
+                "Michael Brown",
+                "Emily Davis",
+                "Chris Evans"
+            ],
+            "num_mflix_comments": 2,
+            "poster": "https://m.media-amazon.com/images/M/MV5BZmRkOTZjMTMtYzI3YS00NjUwLTljNDktYjM3ZGI2YzQzZTRhXkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_.jpg",
+            "title": "Rebellion: Rise of AI",
+            "fullplot": "In the year 2024, society is under the iron grip of a totalitarian government that uses advanced AI to monitor and control its citizens. A small group of determined rebels, led by a former AI engineer, devises a daring plan to overthrow the regime and restore freedom. As they face numerous challenges and betrayals, they must rely on their wit, courage, and unity to succeed against overwhelming odds.",
+            "countries": [
+                "USA",
+                "Canada"
+            ],
+            "released": "2024-10-15T00:00:00.000Z",
+            "directors": [
+                "Alice Johnson",
+                "Bob Lee"
+            ],
+            "writers": [
+                "John Doe",
+                "Jane Smith",
+                "Alex Green"
+            ],
+            "awards": [
+                {
+                    "wins": 5,
+                    "nominations": 10,
+                    "text": "5 wins & 10 nominations.",
+                    "_id": "6676a1efd41c990b9af7c665"
+                }
+            ],
+            "lastupdated": "2024-06-22T12:00:00.000Z",
+            "year": 2024,
+            "imdb": [
+                {
+                    "rating": 8.5,
+                    "votes": 20000,
+                    "id": 123456,
+                    "_id": "6676a1efd41c990b9af7c666"
+                }
+            ],
+            "type": "movie",
+            "tomatoes": [
+                {
+                    "viewer": [
+                        {
+                            "rating": 4.5,
+                            "numReviews": 12000,
+                            "_id": "6676a1efd41c990b9af7c668"
+                        }
+                    ],
+                    "lastUpdated": "2024-06-21T19:16:10.000Z",
+                    "_id": "6676a1efd41c990b9af7c667"
+                }
+            ],
+            "_id": "6676a1efd41c990b9af7c664",
+            "__v": 0
+        },
+        {
+            "plot": "A team of explorers travels to the edge of the known universe to discover a mysterious signal emanating from a distant planet.",
+            "genres": [
+                "Sci-Fi",
+                "Adventure"
+            ],
+            "runtime": 150,
+            "cast": [
+                "Tom Hardy",
+                "Anne Hathaway",
+                "Morgan Freeman"
+            ],
+            "num_mflix_comments": 5,
+            "poster": "https://m.media-amazon.com/images/M/MV5BMTYxNjYxNjMzNl5BMl5BanBnXkFtZTgwODIzNDQ2NjE@._V1_.jpg",
+            "title": "Edge of the Universe",
+            "fullplot": "In the year 2025, a team of explorers travels to the edge of the known universe to discover the source of a mysterious signal emanating from a distant planet. As they uncover the planet's secrets, they must confront their own fears and desires, and ultimately, the fate of humanity rests in their hands.",
+            "countries": [
+                "USA",
+                "UK"
+            ],
+            "released": "2025-05-22T00:00:00.000Z",
+            "directors": [
+                "Christopher Nolan"
+            ],
+            "writers": [
+                "Jonathan Nolan",
+                "Christopher Nolan"
+            ],
+            "awards": [
+                {
+                    "wins": 8,
+                    "nominations": 12,
+                    "text": "8 wins & 12 nominations.",
+                    "_id": "6676a1efd41c990b9af7c66a"
+                }
+            ],
+            "lastupdated": "2025-04-15T12:00:00.000Z",
+            "year": 2025,
+            "imdb": [
+                {
+                    "rating": 9,
+                    "votes": 30000,
+                    "id": 654321,
+                    "_id": "6676a1efd41c990b9af7c66b"
+                }
+            ],
+            "type": "movie",
+            "tomatoes": [
+                {
+                    "viewer": [
+                        {
+                            "rating": 4.8,
+                            "numReviews": 15000,
+                            "_id": "6676a1efd41c990b9af7c66d"
+                        }
+                    ],
+                    "lastUpdated": "2025-04-14T19:16:10.000Z",
+                    "_id": "6676a1efd41c990b9af7c66c"
+                }
+            ],
+            "_id": "6676a1efd41c990b9af7c669",
+            "__v": 0
+        },
+        {
+            "plot": "In a world where dreams are controlled by powerful corporations, a group of renegades fights to reclaim the freedom to dream.",
+            "genres": [
+                "Sci-Fi",
+                "Fantasy"
+            ],
+            "runtime": 120,
+            "cast": [
+                "Emma Watson",
+                "Daniel Radcliffe",
+                "Rupert Grint"
+            ],
+            "num_mflix_comments": 8,
+            "poster": "https://m.media-amazon.com/images/M/MV5BMmY3NmY2YzMtY2M3YS00YTI0LTljZDgtY2E3OGQxM2Q5YjNiXkEyXkFqcGdeQXVyMjUyNjczNA@@._V1_.jpg",
+            "title": "Dreamscape",
+            "fullplot": "In the year 2026, dreams are controlled by powerful corporations that exploit them for profit. A group of renegades, led by a visionary leader, fights to reclaim the freedom to dream and discover the true power of the human mind. As they journey through the dreamscape, they must overcome formidable adversaries and unlock the secrets of their own subconscious.",
+            "countries": [
+                "USA"
+            ],
+            "released": "2026-11-18T00:00:00.000Z",
+            "directors": [
+                "Lana Wachowski",
+                "Lilly Wachowski"
+            ],
+            "writers": [
+                "Lana Wachowski",
+                "Lilly Wachowski"
+            ],
+            "awards": [
+                {
+                    "wins": 10,
+                    "nominations": 15,
+                    "text": "10 wins & 15 nominations.",
+                    "_id": "6676a1efd41c990b9af7c66f"
+                }
+            ],
+            "lastupdated": "2026-10-01T12:00:00.000Z",
+            "year": 2026,
+            "imdb": [
+                {
+                    "rating": 9.2,
+                    "votes": 50000,
+                    "id": 789123,
+                    "_id": "6676a1efd41c990b9af7c670"
+                }
+            ],
+            "type": "movie",
+            "tomatoes": [
+                {
+                    "viewer": [
+                        {
+                            "rating": 4.9,
+                            "numReviews": 20000,
+                            "_id": "6676a1efd41c990b9af7c672"
+                        }
+                    ],
+                    "lastUpdated": "2026-09-30T19:16:10.000Z",
+                    "_id": "6676a1efd41c990b9af7c671"
+                }
+            ],
+            "_id": "6676a1efd41c990b9af7c66e",
+            "__v": 0
+        },
+        {
+            "plot": "A retired hitman seeks vengeance against those who wronged him, while trying to protect his family.",
+            "genres": [
+              "Action",
+              "Thriller",
+              "Crime"
+            ],
+            "runtime": 120,
+            "cast": [
+              "Keanu Reeves",
+              "Charlize Theron",
+              "Liam Neeson",
+              "Halle Berry"
+            ],
+            "num_mflix_comments": 0,
+            "poster": "https://m.media-amazon.com/images/M/MV5BNWU4ZTgzMzAtNTJiMS00ZWEwLTkxZjctMDNkNDZkNjRhNGUwXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+            "title": "Vengeance Road",
+            "fullplot": "After retiring from a life of violence, a former hitman is forced back into the underworld to protect his family and avenge those who wronged him.",
+            "countries": [
+              "USA"
+            ],
+            "released": "2024-02-14T00:00:00.000Z",
+            "directors": [
+              "David Leitch"
+            ],
+            "writers": [],
+            "awards": [
+              {
+                "wins": 1,
+                "nominations": 4,
+                "text": "1 win & 4 nominations.",
+                "_id": "66851e797e59f33ad9e580cd"
+              }
+            ],
+            "lastupdated": "2024-06-21T17:27:59.177Z",
+            "year": 2024,
+            "imdb": [
+              {
+                "rating": 8,
+                "votes": 18000,
+                "id": 654321,
+                "_id": "66851e797e59f33ad9e580ce"
+              }
+            ],
+            "type": "movie",
+            "tomatoes": [
+              {
+                "viewer": [
+                  {
+                    "rating": 4.5,
+                    "numReviews": 12000,
+                    "_id": "66851e797e59f33ad9e580d0"
+                  }
+                ],
+                "lastUpdated": "2024-06-21T19:16:10.000Z",
+                "_id": "66851e797e59f33ad9e580cf"
+              }
+            ],
+            "_id": "66851e797e59f33ad9e580cc",
+            "__v": 0
+          },
+          {
+            "plot": "An orphan boy discovers he has magical powers and attends a school for wizards.",
+            "genres": [
+              "Fantasy",
+              "Adventure",
+              "Family"
+            ],
+            "runtime": 152,
+            "cast": [
+              "Daniel Radcliffe",
+              "Emma Watson",
+              "Rupert Grint",
+              "Alan Rickman"
+            ],
+            "num_mflix_comments": 0,
+            "poster": "https://m.media-amazon.com/images/M/MV5BZTdhZjJjMjgtZmI3MC00ZWFjLTgzOTgtNzMzNmMyNjVkMzhlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+            "title": "The Wizard's Journey",
+            "fullplot": "A young orphan boy discovers he is a wizard on his 11th birthday and is whisked away to a magical school where he makes new friends, learns to harness his powers, and uncovers the truth about his past.",
+            "countries": [
+              "UK",
+              "USA"
+            ],
+            "released": "2023-12-25T00:00:00.000Z",
+            "directors": [
+              "Chris Columbus"
+            ],
+            "writers": [],
+            "awards": [
+              {
+                "wins": 5,
+                "nominations": 10,
+                "text": "5 wins & 10 nominations.",
+                "_id": "66851e797e59f33ad9e580d2"
+              }
+            ],
+            "lastupdated": "2024-06-21T17:27:59.177Z",
+            "year": 2023,
+            "imdb": [
+              {
+                "rating": 7.9,
+                "votes": 25000,
+                "id": 987654,
+                "_id": "66851e797e59f33ad9e580d3"
+              }
+            ],
+            "type": "movie",
+            "tomatoes": [
+              {
+                "viewer": [
+                  {
+                    "rating": 4.3,
+                    "numReviews": 15000,
+                    "_id": "66851e797e59f33ad9e580d5"
+                  }
+                ],
+                "lastUpdated": "2024-06-21T19:16:10.000Z",
+                "_id": "66851e797e59f33ad9e580d4"
+              }
+            ],
+            "_id": "66851e797e59f33ad9e580d1",
+            "__v": 0
+          }
+    ]
+}

@@ -1,0 +1,319 @@
+openapi: 3.0.1
+info:
+  title: Movies API
+  description: API for managing and retrieving movie details.
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000
+    description: Local server
+
+paths:
+  /comments/{id}:
+    get:
+      summary: get a comment
+      operationId: getComment
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: 5a9427648b0beebeb69579e7
+          description: the id of the comment to retrieve
+      responses:
+        '200':
+          description: A comment is found when the id is matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: A comment is here!
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: 5a9427648b0beebeb69579e7
+                      name:
+                        type: string
+                        example: Mercedes Tyler
+                      email:
+                        type: string
+                        example: mercedes_tyler@fakegmail.com
+                      movie_id:
+                        type: string
+                        example: 573a1390f29313caabcd4323
+                      text:
+                        type: string
+                        example: Eius veritatis vero facilis quaerat fuga temporibus. Praesentium expedita sequi repellat id. Corporis minima enim ex. Provident fugit nisi dignissimos nulla nam ipsum aliquam.
+                      date:
+                        type: string
+                        format: date-time
+                        example: "2002-08-18T04:56:07.000Z"
+        '404':
+          description: No comment is found when the id is not matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: No comment found!
+
+  /comments:
+    post:
+      description: let user posts a new comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - email
+                - movie_id
+                - text
+                - date
+              properties:
+                movie_id:
+                  type: string
+                  example: 60c72b2f4f1a256f1a5d0c99
+                text:
+                  type: string
+                  example: Great movie, really enjoyed the plot and the characters.
+                date:
+                  type: string
+                  format: date-time
+                  example: "2024-06-25T15:34:18.000Z"
+                name:
+                  type: string
+                  example: John Doe
+                email:
+                  type: string
+                  example: johndoe@example.com
+      responses:
+        '200':
+          description: A comment is uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: New Comments Added Successfully!
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                          example: 5a9427648b0beebeb69579e7
+                        name:
+                          type: string
+                          example: Mercedes Tyler
+                        email:
+                          type: string
+                          example: mercedes_tyler@fakegmail.com
+                        movie_id:
+                          type: string
+                          example: 573a1390f29313caabcd4323
+                        text:
+                          type: string
+                          example: Eius veritatis vero facilis quaerat fuga temporibus. Praesentium expedita sequi repellat id. Corporis minima enim ex. Provident fugit nisi dignissimos nulla nam ipsum aliquam.
+                        date:
+                          type: string
+                          format: date-time
+                          example: "2002-08-18T04:56:07.000Z"
+        '500':
+          description: User cannot post a comment
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Cannot post the comment!
+
+    get:
+      summary: get a list of comments
+      operationId: getManyComments
+      responses:
+        '200':
+          description: A list of comments is retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: All comments are here!
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                          example: 5a9427648b0beebeb69579e7
+                        name:
+                          type: string
+                          example: Mercedes Tyler
+                        email:
+                          type: string
+                          example: mercedes_tyler@fakegmail.com
+                        movie_id:
+                          type: string
+                          example: 573a1390f29313caabcd4323
+                        text:
+                          type: string
+                          example: Eius veritatis vero facilis quaerat fuga temporibus. Praesentium expedita sequi repellat id. Corporis minima enim ex. Provident fugit nisi dignissimos nulla nam ipsum aliquam.
+                        date:
+                          type: string
+                          format: date-time
+                          example: "2002-08-18T04:56:07.000Z"
+
+        '404':
+          description: No comment is found in the list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Not a single comment found!
+  
+  /comments/updateComments:
+    put:
+      description: let users edit their comments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    example: "66779ff04e5f7156d7e3261b"
+                  example: ["66779ff04e5f7156d7e3261b", "66779ffa4e5f7156d7e3261d"]
+                updateFields:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+                      example: Actually, this film is trash now
+      responses:
+        '200':
+          description: comments will be updated successfully if comment's id is matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: Comments Updated Successfully!
+                  data:
+                    type: object
+                    properties:
+                      acknowledged:
+                        type: boolean
+                        example: true
+                      modifiedCount:
+                        type: number
+                        example: 1
+                      upsertedId:
+                        type: string
+                        nullable: true
+                        example: null
+                      upsertedCount:
+                        type: number
+                        example: 1
+                      matchedCount:
+                        type: number
+                        example: 1
+        '500':
+          description: comments will not be updated successfully if comment's id is not matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Failed to update!
+
+  /comments/deleteSingleComment/{id}:
+    delete:
+      description: remove a comment that user mistakenly posted or inappropriate
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            example: 667be1a29e9af886825aa077
+          description: the id of the comment to be deleted
+      responses:
+        '200':
+          description: comments will be removed successfully if comment's id is matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: Comments Removed Successfully!
+        '500':
+          description: comments will not be removed successfully if comment's id is not matched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Failed to remove comments!
